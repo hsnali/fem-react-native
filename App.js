@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, FlatList } from 'react-native';
 
 import { ColorBox } from './patterns/atoms/colorBox';
 
@@ -19,11 +19,14 @@ const App = () => {
           Here are some boxes of different colours
         </Text>
 
-        {colours.map((color) => {
-          const [name, hex] = color.split(': ');
-
-          return <ColorBox key={name} name={name} color={hex} />;
-        })}
+        <FlatList
+          data={colours}
+          keyExtractor={(color) => color}
+          renderItem={(data) => {
+            const [name, hex] = data.item.split(': ');
+            return <ColorBox key={name} name={name} color={hex} />;
+          }}
+        />
       </View>
     </SafeAreaView>
   );
