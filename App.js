@@ -21,8 +21,8 @@ const App = () => {
         <FlatList
           data={colours}
           keyExtractor={(color) => color}
-          renderItem={(data) => {
-            const [name, hex] = data.item.split(': ');
+          renderItem={({ item }) => {
+            const [name, hex] = item.split(': ');
             return <ColorBox name={name} color={hex} />;
           }}
         />
