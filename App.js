@@ -20,8 +20,12 @@ const App = () => {
         {colours.map((color) => {
           const [name, hex] = color.split(':');
           return (
-            <View style={[{ backgroundColor: hex.trim() }, styles.colours]}>
-              <Text style={{ color: '#fff' }}>{name}</Text>
+            <View
+              style={[{ backgroundColor: hex.trim() }, styles.colorContainer]}
+            >
+              <Text style={styles.colorItem}>
+                {name}: {hex}
+              </Text>
             </View>
           );
         })}
@@ -37,11 +41,15 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: '700',
   },
-  colours: {
+  colorContainer: {
     marginVertical: 3,
     padding: 5,
     borderRadius: 2,
+  },
+  colorItem: {
     color: '#ffffff',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   container: {
     flex: 1,
