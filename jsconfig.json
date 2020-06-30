@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*"],
+      "@atoms/*": ["./patterns/atoms/*"],
+      "@molecules/*": ["./patterns/molecules/*"]
+    }
+  }
+}
