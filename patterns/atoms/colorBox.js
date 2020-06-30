@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export const ColorBox = ({ name, color }) => {
+export const ColorBox = ({ name, code }) => {
   return (
-    <View style={[styles.container, { backgroundColor: color }]}>
+    <View style={[styles.container, { backgroundColor: code }]}>
       <Text style={styles.color}>
-        {name}: {color}
+        {name}: {code}
       </Text>
     </View>
   );
