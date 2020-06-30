@@ -18,13 +18,12 @@ const App = () => {
         <Text style={styles.bold}>
           Here are some boxes of different colours
         </Text>
-
         <FlatList
           data={colours}
           keyExtractor={(color) => color}
           renderItem={(data) => {
             const [name, hex] = data.item.split(': ');
-            return <ColorBox key={name} name={name} color={hex} />;
+            return <ColorBox name={name} color={hex} />;
           }}
         />
       </View>
