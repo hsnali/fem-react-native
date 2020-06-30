@@ -9,6 +9,18 @@ const colours = [
   'Blue: #268bd2',
   'Magenta: #d33682',
   'Orange: #cb4b16',
+  'Cyan: #2aa198',
+  'Blue: #268bd2',
+  'Magenta: #d33682',
+  'Orange: #cb4b16',
+  'Cyan: #2aa198',
+  'Blue: #268bd2',
+  'Magenta: #d33682',
+  'Orange: #cb4b16',
+  'Cyan: #2aa198',
+  'Blue: #268bd2',
+  'Magenta: #d33682',
+  'Orange: #cb4b16',
 ];
 
 const App = () => {
@@ -20,11 +32,13 @@ const App = () => {
         </Text>
         <FlatList
           data={colours}
-          keyExtractor={(color) => color}
+          keyExtractor={(color, index) => `${index}-${color}`}
           renderItem={({ item }) => {
             const [name, hex] = item.split(': ');
             return <ColorBox name={name} color={hex} />;
           }}
+          ListHeaderComponent={<Text>List Header</Text>}
+          ListFooterComponent={<Text>List Footer</Text>}
         />
       </View>
     </SafeAreaView>
