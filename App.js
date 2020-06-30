@@ -50,17 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/*{ <View style={styles.container}>
-
-        <Text>Open up App.js to start working on your app! :)</Text>
-      </View> }*/
-
 export default App;
-
-/*
-
- flex: 1,
-    backgroundColor: '#f00',
-    alignItems: 'center',
-    justifyContent: 'center',
-  */
