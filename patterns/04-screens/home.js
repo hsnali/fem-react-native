@@ -36,10 +36,7 @@ export const Home = ({ navigation }) => (
               ...item,
             })
           }
-          navigation={navigation}
-          screen="ColorPalette"
-          name={item.name}
-          colors={item.colors}
+          {...item}
         />
       )}
     />
