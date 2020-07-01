@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, FlatList, StyleSheet } from 'react-native';
+import { Text, FlatList } from 'react-native';
 
 // Local
+import { utilStyles } from '@base/styles/utils';
+
 import { ColorBox } from '@root/patterns/02-atoms/colorBox/colorBox';
 
 export const Palette = ({ title, colors }) => (
@@ -12,15 +14,8 @@ export const Palette = ({ title, colors }) => (
       const { name, code } = item;
       return <ColorBox name={name} code={code} />;
     }}
-    ListHeaderComponent={<Text style={styles.title}>{title}</Text>}
+    ListHeaderComponent={<Text style={utilStyles.subHeading}>{title}</Text>}
   />
 );
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
-  },
-});
 
 export default Palette;

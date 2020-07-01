@@ -6,6 +6,10 @@ export const utilStyles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#FFF',
   },
+  flush: {
+    margin: 0,
+    padding: 0,
+  },
   bold: {
     fontWeight: '700',
   },
@@ -13,6 +17,11 @@ export const utilStyles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 10,
     fontWeight: '700',
+  },
+  subHeading: {
+    fontSize: 18,
+    padding: 10,
+    fontWeight: '600',
   },
   spacer: {
     marginBottom: 30,

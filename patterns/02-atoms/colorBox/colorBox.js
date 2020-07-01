@@ -17,9 +17,7 @@ export const ColorBox = ({ name, code }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 5,
-    padding: 10,
-    borderRadius: 2,
+    padding: 25,
   },
   color: {
     fontWeight: '700',

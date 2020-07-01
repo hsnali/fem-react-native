@@ -6,7 +6,7 @@ import { utilStyles } from '@base/styles/utils';
 import { Palette } from '@molecules/palette';
 
 export const ColorPalette = ({ route: { params } }) => (
-  <View style={utilStyles.container}>
+  <View style={[utilStyles.container, utilStyles.flush]}>
     <Palette title={params.name} colors={params.colors} />
   </View>
 );
