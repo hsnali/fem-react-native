@@ -2,8 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@root/*": ["./*"],
       "@atoms/*": ["./patterns/atoms/*"],
-      "@molecules/*": ["./patterns/molecules/*"]
+      "@molecules/*": ["./patterns/molecules/*"],
+      "@screens/*": ["./patterns/screens/*"]
     }
   },
   "typeAcquisition": {
