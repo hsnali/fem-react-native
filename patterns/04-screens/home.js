@@ -1,14 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { FlatList, SectionList } from 'react-native';
+import { View } from 'react-native';
+import { FlatList } from 'react-native';
 
 // Local
-import { Thumbnail } from '@atoms/thumbnail';
-
-import { Preview } from '@molecules/preview';
-
 import { FRONTEND_MASTERS, RAINBOW, SOLARISED } from '@base/constants/colors';
 import { utilStyles } from '@base/styles/utils';
+import { Preview } from '@molecules/preview';
 
 const sections = [
   {

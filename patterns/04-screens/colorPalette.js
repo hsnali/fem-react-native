@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 // Local
 import { utilStyles } from '@base/styles/utils';
-import { Palette } from '@root/patterns/03-molecules/palette';
-import { SOLARISED } from '@base/constants/colors';
+import { Palette } from '@molecules/palette';
 
 export const ColorPalette = ({ route: { params } }) => (
   <View style={utilStyles.container}>
