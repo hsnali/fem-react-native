@@ -8,15 +8,8 @@ import { Thumbnail } from '@atoms/thumbnail';
 const getSubset = (items = [], length = 5) =>
   items.slice(0, items.length < length ? items.length : length);
 
-export const Preview = ({ navigation, screen, name, colors }) => (
-  <TouchableOpacity
-    onPress={() =>
-      navigation.navigate(screen, {
-        name,
-        colors,
-      })
-    }
-  >
+export const Preview = ({ screen, name, colors, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
     <View style={utilStyles.spacer}>
       <Text style={utilStyles.sectionHeading}>{name}</Text>
       <FlatList

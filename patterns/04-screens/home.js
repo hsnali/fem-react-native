@@ -10,17 +10,17 @@ import { Preview } from '@molecules/preview';
 const sections = [
   {
     key: 'fem',
-    title: 'Frontend Masters',
+    name: 'Frontend Masters',
     colors: FRONTEND_MASTERS,
   },
   {
     key: 'rain',
-    title: 'Rainbow',
+    name: 'Rainbow',
     colors: RAINBOW,
   },
   {
     key: 'sola',
-    title: 'Solarised',
+    name: 'Solarised',
     colors: SOLARISED,
   },
 ];
@@ -31,9 +31,14 @@ export const Home = ({ navigation }) => (
       data={sections}
       renderItem={({ item }) => (
         <Preview
+          onPress={() =>
+            navigation.navigate('ColorPalette', {
+              ...item,
+            })
+          }
           navigation={navigation}
           screen="ColorPalette"
-          name={item.title}
+          name={item.name}
           colors={item.colors}
         />
       )}
