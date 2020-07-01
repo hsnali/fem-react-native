@@ -26,6 +26,11 @@ export const Preview = ({ navigation, screen, name, colors }) => {
           data={getSubset(colors, 5)}
           keyExtractor={(color) => color.name}
           horizontal={true}
+          contentContainerStyle={{
+            flex: 1,
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+          }}
           renderItem={({ item }) => <Thumbnail color={item.code} />}
         />
       </View>
