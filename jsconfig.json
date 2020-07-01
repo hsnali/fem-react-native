@@ -5,5 +5,8 @@
       "@atoms/*": ["./patterns/atoms/*"],
       "@molecules/*": ["./patterns/molecules/*"]
     }
+  },
+  "typeAcquisition": {
+    "include": ["jest"]
   }
 }
