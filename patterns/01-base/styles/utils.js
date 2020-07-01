@@ -10,6 +10,7 @@ export const utilStyles = StyleSheet.create({
     fontWeight: '700',
   },
   sectionHeading: {
+    fontSize: 18,
     marginBottom: 10,
     fontWeight: '700',
   },
