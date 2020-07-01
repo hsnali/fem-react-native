@@ -12,6 +12,12 @@ const props = {
 
 let wrapper = render(<ColorBox {...props} />);
 
+it('snapshot test', () => {
+  const { container } = wrapper;
+
+  expect(container).toMatchSnapshot();
+});
+
 it('renders color name', () => {
   const { getByText } = wrapper;
   const text = getByText(props.name, { exact: false });

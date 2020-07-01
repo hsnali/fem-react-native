@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sets background color 1`] = `
+exports[`snapshot test 1`] = `
 <View
+  collapsable={true}
   pointerEvents="box-none"
   style={
     Object {
@@ -10,39 +11,36 @@ exports[`sets background color 1`] = `
   }
 >
   <View
-    collapsable={true}
-    pointerEvents="box-none"
     style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
-    <View
-      style={
+      Array [
+        Object {
+          "borderRadius": 2,
+          "marginVertical": 5,
+          "padding": 10,
+        },
         Object {
           "backgroundColor": "#F00",
-        }
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#eee",
+          },
+        ]
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            Object {
-              "color": "#eee",
-            },
-          ]
-        }
-      >
-        Red
-        : 
-        #F00
-      </Text>
-    </View>
+      Red
+      : 
+      #F00
+    </Text>
   </View>
 </View>
 `;
