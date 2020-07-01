@@ -9,9 +9,10 @@ module.exports = function (api) {
           root: ['./'],
           alias: {
             '@root': './',
-            '@atoms': './patterns/atoms',
-            '@molecules': './patterns/molecules',
-            '@screens': './patterns/screens',
+            '@base': './patterns/01-base',
+            '@atoms': './patterns/02-atoms',
+            '@molecules': './patterns/03-molecules',
+            '@screens': './patterns/04-screens',
           },
         },
       ],

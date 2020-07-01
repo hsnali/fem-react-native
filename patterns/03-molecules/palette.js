@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, FlatList, StyleSheet } from 'react-native';
 
 // Local
-import { ColorBox } from '@atoms/colorBox/colorBox';
+import { ColorBox } from '@root/patterns/02-atoms/colorBox/colorBox';
 
 export const Palette = ({ title, colors }) => (
   <FlatList

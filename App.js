@@ -4,8 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Local
-import { Home } from '@screens/home';
-import { ColorPalette } from '@screens/colorPalette';
+import { Home } from '@root/patterns/04-screens/home';
+import { ColorPalette } from '@root/patterns/04-screens/colorPalette';
 
 // Constants
 const Stack = createStackNavigator();
