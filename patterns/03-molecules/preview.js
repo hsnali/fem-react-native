@@ -8,34 +8,31 @@ import { Thumbnail } from '@atoms/thumbnail';
 const getSubset = (items = [], length = 5) =>
   items.slice(0, items.length < length ? items.length : length);
 
-export const Preview = ({ navigation, screen, name, colors }) => {
-  console.log('*****', colors);
-
-  return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate(screen, {
-          name,
-          colors,
-        })
-      }
-    >
-      <View style={utilStyles.spacer}>
-        <Text style={utilStyles.sectionHeading}>{name}</Text>
-        <FlatList
-          data={getSubset(colors, 5)}
-          keyExtractor={(color) => color.name}
-          horizontal={true}
-          contentContainerStyle={{
-            flex: 1,
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-          }}
-          renderItem={({ item }) => <Thumbnail color={item.code} />}
-        />
-      </View>
-    </TouchableOpacity>
-  );
-};
+export const Preview = ({ navigation, screen, name, colors }) => (
+  <TouchableOpacity
+    onPress={() =>
+      navigation.navigate(screen, {
+        name,
+        colors,
+      })
+    }
+  >
+    <View style={utilStyles.spacer}>
+      <Text style={utilStyles.sectionHeading}>{name}</Text>
+      <FlatList
+        data={getSubset(colors, 5)}
+        keyExtractor={(color) => color.name}
+        horizontal={true}
+        contentContainerStyle={{
+          flex: 1,
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        }}
+        renderItem={({ item }) => <Thumbnail color={item.code} />}
+      />
+    </View>
+  </TouchableOpacity>
+);
 
 export default Preview;

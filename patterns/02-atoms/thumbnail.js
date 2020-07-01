@@ -7,8 +7,9 @@ export const Thumbnail = ({ color }) => (
 
 const styles = StyleSheet.create({
   thumbnail: {
-    padding: 20,
-    marginRight: 10,
+    width: 70,
+    height: 70,
+    // marginRight: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.1,
