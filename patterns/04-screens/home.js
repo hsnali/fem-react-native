@@ -17,7 +17,7 @@ export const Home = ({ navigation }) => {
 
   useEffect(() => {
     getPalettes();
-  }, [getPalettes]);
+  });
 
   return (
     <View style={utilStyles.container}>
