@@ -9,14 +9,14 @@ import { utilStyles } from '@base/styles/utils';
 import { Preview } from '@molecules/preview';
 
 export const Home = ({ navigation }) => {
-  const [canvas, setCanvas] = useState({ palettes: [], loading: true });
+  const [canvas, setCanvas] = useState({ palettes: [], isLoading: true });
 
   const getPalettes = useCallback(async () => {
     const response = await fetch(PALETTE_URL);
-    setCanvas((state) => ({ ...state, loading: true }));
+    setCanvas((state) => ({ ...state, isLoading: true }));
     if (response.ok) {
       const palettes = shuffle(await response.json());
-      setCanvas({ palettes, loading: false });
+      setCanvas({ palettes, isLoading: false });
     }
   }, []);
 
@@ -40,7 +40,7 @@ export const Home = ({ navigation }) => {
             }
           />
         )}
-        refreshing={false}
+        refreshing={canvas.isLoading}
         onRefresh={getPalettes}
       />
     </View>
