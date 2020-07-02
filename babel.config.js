@@ -8,8 +8,11 @@ module.exports = function (api) {
         {
           root: ['./'],
           alias: {
-            '@atoms': './patterns/atoms',
-            '@molecules': './patterns/molecules',
+            '@root': './',
+            '@base': './patterns/01-base',
+            '@atoms': './patterns/02-atoms',
+            '@molecules': './patterns/03-molecules',
+            '@screens': './patterns/04-screens',
           },
         },
       ],

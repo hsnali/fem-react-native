@@ -8,8 +8,8 @@ import { ColorBox } from './colorBox';
 expect.extend({ toHaveStyle });
 
 const props = {
-  name: 'Red',
-  code: '#F00',
+  colorName: 'Red',
+  hexCode: '#F00',
 };
 
 let wrapper = render(<ColorBox {...props} />);
@@ -22,14 +22,14 @@ it('snapshot test', () => {
 
 it('renders color name', () => {
   const { getByText } = wrapper;
-  const text = getByText(props.name, { exact: false });
+  const text = getByText(props.colorName, { exact: false });
 
   expect(text).toBeTruthy();
 });
 
 it('renders color value', () => {
   const { getByText } = wrapper;
-  const text = getByText(props.code, { exact: false });
+  const text = getByText(props.hexCode, { exact: false });
 
   expect(text).toBeTruthy();
 });
@@ -38,7 +38,7 @@ it('sets background color', () => {
   const { container } = wrapper;
   const [root] = container.children;
   const style = {
-    backgroundColor: props.code,
+    backgroundColor: props.hexCode,
   };
 
   expect(root).toHaveStyle(style);

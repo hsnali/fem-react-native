@@ -1,4 +1,4 @@
-export const COLORS = [
+export const SOLARISED = [
   { name: 'Base03', code: '#002b36' },
   { name: 'Base02', code: '#073642' },
   { name: 'Base01', code: '#586e75' },
@@ -15,4 +15,20 @@ export const COLORS = [
   { name: 'Blue', code: '#268bd2' },
   { name: 'Cyan', code: '#2aa198' },
   { name: 'Green', code: '#859900' },
+];
+
+export const RAINBOW = [
+  { name: 'Red', code: '#FF0000' },
+  { name: 'Orange', code: '#FF7F00' },
+  { name: 'Yellow', code: '#FFFF00' },
+  { name: 'Green', code: '#00FF00' },
+  { name: 'Violet', code: '#8B00FF' },
+];
+
+export const FRONTEND_MASTERS = [
+  { name: 'Red', code: '#c02d28' },
+  { name: 'Black', code: '#3e3e3e' },
+  { name: 'Grey', code: '#8a8a8a' },
+  { name: 'White', code: '#ffffff' },
+  { name: 'Orange', code: '#e66225' },
 ];

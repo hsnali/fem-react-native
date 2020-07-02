@@ -1,34 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import { Palette } from '@molecules/palette';
-import { COLORS } from './constants';
+// Local
+import { Home } from '@root/patterns/04-screens/home';
+import { ColorPalette } from '@root/patterns/04-screens/colorPalette';
+
+// Constants
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.safe}>
-      <View style={styles.container}>
-        <Text style={styles.bold}>
-          Here are some boxes of different colours
-        </Text>
-        <Palette title="Solarized" colors={COLORS} />
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="ColorPalette"
+          component={ColorPalette}
+          options={({ route }) => ({ title: route.params.paletteName })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  safe: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    paddingTop: 30,
-    paddingHorizontal: 20,
-  },
-  bold: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
