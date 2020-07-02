@@ -9,8 +9,6 @@ import { utilStyles } from '@base/styles/utils';
 import { Preview } from '@molecules/preview';
 
 export const Home = ({ navigation }) => {
-  // const [palettes, setPalettes] = useState([]);
-
   const [canvas, setCanvas] = useState({ palettes: [], loading: true });
 
   const getPalettes = useCallback(async () => {
