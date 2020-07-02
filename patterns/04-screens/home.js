@@ -11,17 +11,8 @@ export const Home = ({ navigation }) => {
   const [palettes, setPalettes] = useState([]);
 
   const getPalettes = useCallback(async () => {
-    console.log('getting palettes');
-    const response = await fetch(
-      'https://color-palette-api.kadikraman.now.sh/palettes',
-    );
-
-    if (response.ok) {
-      const pal = await response.json();
-      console.log('got it', pal);
-
-      setPalettes(pal);
-    }
+    const response = await fetch(PALETTE_URL);
+    if (response.ok) setPalettes(await response.json());
   }, []);
 
   useEffect(() => {
