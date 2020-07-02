@@ -27,12 +27,12 @@ export const Home = ({ navigation }) => {
         ListEmptyComponent={<Text>Loading...</Text>}
         renderItem={({ item }) => (
           <Preview
+            {...item}
             onPress={() =>
               navigation.navigate('ColorPalette', {
                 ...item,
               })
             }
-            {...item}
           />
         )}
       />
