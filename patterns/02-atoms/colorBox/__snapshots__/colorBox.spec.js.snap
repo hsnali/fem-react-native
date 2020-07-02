@@ -14,9 +14,7 @@ exports[`snapshot test 1`] = `
     style={
       Array [
         Object {
-          "borderRadius": 2,
-          "marginVertical": 5,
-          "padding": 10,
+          "padding": 25,
         },
         Object {
           "backgroundColor": "#F00",

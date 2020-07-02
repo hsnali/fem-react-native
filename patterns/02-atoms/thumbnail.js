@@ -1,18 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+
+// Local
+import { utilStyles } from '@base/styles/utils';
 
 export const Thumbnail = ({ color }) => (
-  <View style={[styles.thumbnail, { backgroundColor: color }]} />
+  <View style={[utilStyles.thumbnail, { backgroundColor: color }]}>
+    <Text style={utilStyles.invisible}>{color}</Text>
+  </View>
 );
-
-const styles = StyleSheet.create({
-  thumbnail: {
-    width: 70,
-    height: 70,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-  },
-});
 
 export default Thumbnail;

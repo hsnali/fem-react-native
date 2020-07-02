@@ -26,4 +26,22 @@ export const utilStyles = StyleSheet.create({
   spacer: {
     marginBottom: 30,
   },
+  previews: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    flexGrow: 1,
+  },
+  thumbnail: {
+    flexBasis: '20%',
+    flexShrink: 0,
+    flexGrow: 1,
+    height: 80,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+  },
+  invisible: {
+    opacity: 0,
+  },
 });

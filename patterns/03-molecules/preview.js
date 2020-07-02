@@ -8,15 +8,16 @@ import { Thumbnail } from '@atoms/thumbnail';
 const getSubset = (items = [], length = 5) =>
   items.slice(0, items.length < length ? items.length : length);
 
-export const Preview = ({ name, colors, onPress }) => (
+export const Preview = ({ paletteName, colors, onPress }) => (
   <TouchableOpacity onPress={onPress}>
     <View style={utilStyles.spacer}>
-      <Text style={utilStyles.sectionHeading}>{name}</Text>
+      <Text style={utilStyles.sectionHeading}>{paletteName}</Text>
       <FlatList
         data={getSubset(colors, 5)}
-        keyExtractor={(color) => color.name}
+        keyExtractor={(color) => color.colorName}
         horizontal={true}
-        renderItem={({ item }) => <Thumbnail color={item.code} />}
+        contentContainerStyle={utilStyles.previews}
+        renderItem={({ item }) => <Thumbnail color={item.hexCode} />}
       />
     </View>
   </TouchableOpacity>

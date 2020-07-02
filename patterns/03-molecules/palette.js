@@ -11,11 +11,8 @@ export const Palette = ({ title, colors }) => (
     <Text style={utilStyles.subHeading}>{title}</Text>
     <FlatList
       data={colors}
-      keyExtractor={(color) => color.name}
-      renderItem={({ item }) => {
-        const { name, code } = item;
-        return <ColorBox name={name} code={code} />;
-      }}
+      keyExtractor={(color) => color.colorName}
+      renderItem={({ item }) => <ColorBox {...item} />}
     />
   </View>
 );
