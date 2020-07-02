@@ -4,27 +4,8 @@ import { Text, FlatList } from 'react-native';
 
 // Local
 import { PALETTE_URL } from '@base/constants/api';
-import { FRONTEND_MASTERS, RAINBOW, SOLARISED } from '@base/constants/colors';
 import { utilStyles } from '@base/styles/utils';
 import { Preview } from '@molecules/preview';
-
-const sections = [
-  {
-    key: 'fem',
-    name: 'Frontend Masters',
-    colors: FRONTEND_MASTERS,
-  },
-  {
-    key: 'rain',
-    name: 'Rainbow',
-    colors: RAINBOW,
-  },
-  {
-    key: 'sola',
-    name: 'Solarised',
-    colors: SOLARISED,
-  },
-];
 
 export const Home = ({ navigation }) => {
   const [palettes, setPalettes] = useState([]);
