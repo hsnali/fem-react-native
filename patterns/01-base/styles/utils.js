@@ -43,6 +43,13 @@ export const utilStyles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
   },
+  thumbnailSmall: {
+    flexBasis: 'auto',
+    width: 30,
+    height: 30,
+    marginRight: 10,
+    shadowOpacity: 0,
+  },
   invisible: {
     opacity: 0,
   },
@@ -63,5 +70,22 @@ export const utilStyles = StyleSheet.create({
     borderColor: '#555',
     padding: 10,
     marginBottom: 10,
+  },
+  switchFields: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  rowFieldMinimal: {
+    flexDirection: 'row',
+    flexGrow: 0,
+    flexShrink: 1,
+    alignItems: 'center',
+  },
+  separator: {
+    borderBottomColor: '#555',
+    borderBottomWidth: 1,
+    marginVertical: 5,
   },
 });

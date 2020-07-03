@@ -4,6 +4,7 @@ import { View, Text, TextInput, FlatList } from 'react-native';
 // Local
 import { utilStyles } from '@base/styles/utils';
 import { COLORS } from '@base/constants/colors';
+import { Separator } from '@atoms/separator';
 import { ColorToggle } from '@molecules/colorToggle';
 
 export const PaletteForm = (props) => {
@@ -31,6 +32,7 @@ export const PaletteForm = (props) => {
         data={COLORS}
         keyExtractor={(color) => color.colorName}
         renderItem={({ item }) => <ColorToggle {...item} />}
+        ItemSeparatorComponent={() => <Separator />}
       />
     </View>
   );
