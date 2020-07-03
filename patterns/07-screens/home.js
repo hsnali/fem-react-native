@@ -6,6 +6,8 @@ import shuffle from 'lodash-es/shuffle';
 // Local
 import { PALETTE_URL } from '@base/constants/api';
 import { utilStyles } from '@base/styles/utils';
+
+import { AddPaletteButton } from '@atoms/addPaletteButton';
 import { Preview } from '@molecules/preview';
 
 export const Home = ({ navigation }) => {
@@ -43,6 +45,7 @@ export const Home = ({ navigation }) => {
         refreshing={canvas.isLoading}
         onRefresh={getPalettes}
       />
+      <AddPaletteButton onPress={() => navigation.navigate('PaletteModal')} />
     </View>
   );
 };

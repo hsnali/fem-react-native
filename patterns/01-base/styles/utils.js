@@ -44,4 +44,15 @@ export const utilStyles = StyleSheet.create({
   invisible: {
     opacity: 0,
   },
+  buttonPrimary: {
+    fontSize: 18,
+    fontWeight: '600',
+    padding: 10,
+    marginVertical: 15,
+    backgroundColor: '#022a4b',
+    borderRadius: 3,
+    overflow: 'hidden',
+    color: '#fff',
+    textAlign: 'center',
+  },
 });
