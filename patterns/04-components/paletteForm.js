@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, TextInput, FlatList } from 'react-native';
 
 // Local
@@ -12,6 +12,14 @@ export const PaletteForm = (props) => {
     name: '',
     colors: [],
   });
+
+  const handleToggleChange = ({ colorName, hexCode, isEnabled }) => {
+    const colors = form.colors.filter((color) => color.colorName !== colorName);
+
+    if (isEnabled) colors.push({ colorName, hexCode });
+
+    setForm((state) => ({ ...state, colors }));
+  };
 
   useEffect(() => {
     console.log('Form Data', form);
@@ -31,7 +39,9 @@ export const PaletteForm = (props) => {
       <FlatList
         data={COLORS}
         keyExtractor={(color) => color.colorName}
-        renderItem={({ item }) => <ColorToggle {...item} />}
+        renderItem={({ item }) => (
+          <ColorToggle {...item} handleChange={handleToggleChange} />
+        )}
         ItemSeparatorComponent={() => <Separator />}
       />
     </View>
