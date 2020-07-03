@@ -24,7 +24,7 @@ export const PaletteForm = (props) => {
   }, [form]);
 
   return (
-    <View>
+    <View style={utilStyles.flexOne}>
       <Text style={[utilStyles.subHeading, utilStyles.flushHorizontal]}>
         Name of your colour palette
       </Text>
@@ -42,6 +42,7 @@ export const PaletteForm = (props) => {
         )}
         ItemSeparatorComponent={() => <Separator />}
       />
+      <Text style={[utilStyles.buttonPrimary]}>Save palette</Text>
     </View>
   );
 };

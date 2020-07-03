@@ -6,6 +6,9 @@ export const utilStyles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#FFF',
   },
+  flexOne: {
+    flex: 1,
+  },
   flush: {
     margin: 0,
     padding: 0,
