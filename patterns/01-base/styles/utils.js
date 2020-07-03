@@ -10,6 +10,10 @@ export const utilStyles = StyleSheet.create({
     margin: 0,
     padding: 0,
   },
+  flushHorizontal: {
+    marginHorizontal: 0,
+    paddingHorizontal: 0,
+  },
   bold: {
     fontWeight: '700',
   },
@@ -54,5 +58,12 @@ export const utilStyles = StyleSheet.create({
     overflow: 'hidden',
     color: '#fff',
     textAlign: 'center',
+  },
+  textField: {
+    borderWidth: 1,
+    borderRadius: 3,
+    borderColor: '#555',
+    padding: 10,
+    marginBottom: 10,
   },
 });
