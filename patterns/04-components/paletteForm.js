@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, TextInput, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import uniqueId from 'lodash-es/uniqueId';
 
 // Local
 import { utilStyles } from '@base/styles/utils';
@@ -7,9 +14,10 @@ import { COLORS } from '@base/constants/colors';
 import { Separator } from '@atoms/separator';
 import { ColorToggle } from '@molecules/colorToggle';
 
-export const PaletteForm = (props) => {
+export const PaletteForm = ({ handleSave }) => {
   const [form, setForm] = useState({
-    name: '',
+    id: uniqueId(),
+    paletteName: '',
     colors: [],
   });
 
@@ -17,6 +25,10 @@ export const PaletteForm = (props) => {
     const colors = form.colors.filter((color) => color.colorName !== colorName);
     if (isEnabled) colors.push({ colorName, hexCode });
     setForm((state) => ({ ...state, colors }));
+  };
+
+  const saveForm = () => {
+    handleSave(form);
   };
 
   useEffect(() => {
@@ -30,8 +42,10 @@ export const PaletteForm = (props) => {
       </Text>
       <TextInput
         style={utilStyles.textField}
-        value={form.name}
-        onChangeText={(name) => setForm((state) => ({ ...state, name }))}
+        value={form.paletteName}
+        onChangeText={(paletteName) =>
+          setForm((state) => ({ ...state, paletteName }))
+        }
       />
 
       <FlatList
@@ -42,7 +56,10 @@ export const PaletteForm = (props) => {
         )}
         ItemSeparatorComponent={() => <Separator />}
       />
-      <Text style={[utilStyles.buttonPrimary]}>Save palette</Text>
+
+      <TouchableOpacity onPress={saveForm}>
+        <Text style={[utilStyles.buttonPrimary]}>Save palette</Text>
+      </TouchableOpacity>
     </View>
   );
 };

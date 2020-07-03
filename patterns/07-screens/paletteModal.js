@@ -5,9 +5,11 @@ import { View, Text } from 'react-native';
 import { utilStyles } from '@base/styles/utils';
 import { PaletteForm } from '@components/paletteForm';
 
-export const PaletteModal = () => (
+export const PaletteModal = ({ navigation }) => (
   <View style={utilStyles.container}>
-    <PaletteForm />
+    <PaletteForm
+      handleSave={(palette) => navigation.navigate('Home', { palette })}
+    />
   </View>
 );
 

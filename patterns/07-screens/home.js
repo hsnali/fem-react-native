@@ -10,8 +10,10 @@ import { utilStyles } from '@base/styles/utils';
 import { AddPaletteButton } from '@atoms/addPaletteButton';
 import { Preview } from '@molecules/preview';
 
-export const Home = ({ navigation }) => {
+export const Home = ({ navigation, route: { params = {} } }) => {
   const [canvas, setCanvas] = useState({ palettes: [], isLoading: true });
+  const [palettes, setPalettes] = useState([]);
+  const customPalette = params.palette;
 
   const getPalettes = useCallback(async () => {
     const response = await fetch(PALETTE_URL);
@@ -22,6 +24,15 @@ export const Home = ({ navigation }) => {
     }
   }, []);
 
+  console.log('*** param colors', customPalette);
+
+  useEffect(() => {
+    const combinedPalettes = [...canvas.palettes];
+    if (customPalette) combinedPalettes.unshift(customPalette);
+    setPalettes(combinedPalettes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [canvas]);
+
   useEffect(() => {
     getPalettes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -30,7 +41,7 @@ export const Home = ({ navigation }) => {
   return (
     <View style={utilStyles.container}>
       <FlatList
-        data={canvas.palettes}
+        data={palettes}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Preview
