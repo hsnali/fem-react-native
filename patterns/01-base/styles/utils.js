@@ -38,8 +38,6 @@ export const utilStyles = StyleSheet.create({
   },
   thumbnail: {
     flexBasis: '20%',
-    flexShrink: 0,
-    flexGrow: 1,
     height: 80,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
