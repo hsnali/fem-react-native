@@ -68,7 +68,7 @@ export const utilStyles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 3,
     borderColor: '#555',
-    padding: 10,
+    padding: 11,
     marginBottom: 10,
   },
   switchFields: {
@@ -84,7 +84,7 @@ export const utilStyles = StyleSheet.create({
     alignItems: 'center',
   },
   separator: {
-    borderBottomColor: '#555',
+    borderBottomColor: '#ccc',
     borderBottomWidth: 1,
     marginVertical: 5,
   },
