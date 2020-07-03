@@ -15,9 +15,7 @@ export const PaletteForm = (props) => {
 
   const handleToggleChange = ({ colorName, hexCode, isEnabled }) => {
     const colors = form.colors.filter((color) => color.colorName !== colorName);
-
     if (isEnabled) colors.push({ colorName, hexCode });
-
     setForm((state) => ({ ...state, colors }));
   };
 
