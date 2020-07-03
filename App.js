@@ -19,7 +19,11 @@ const App = () => {
           component={MainStackNav}
           options={{ headerShown: false }}
         />
-        <RootStack.Screen name="PaletteModal" component={PaletteModal} />
+        <RootStack.Screen
+          name="PaletteModal"
+          component={PaletteModal}
+          options={() => ({ title: 'Add new Palette' })}
+        />
       </RootStack.Navigator>
     </NavigationContainer>
   );
