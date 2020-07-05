@@ -35,8 +35,8 @@ export const PaletteForm = ({ handleSave }) => {
   };
 
   const hasColors = () => {
-    if (form.colors.length) return true;
-    Alert.alert('Colours', 'Please select at least one colour');
+    if (form.colors.length > 2) return true;
+    Alert.alert('Colours', 'Please select at least 3 colours');
     return false;
   };
 
