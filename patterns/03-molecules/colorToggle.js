@@ -9,7 +9,7 @@ export const ColorToggle = ({ colorName, hexCode, handleChange }) => {
   const [isEnabled, setIsEnabled] = useState(false);
 
   useEffect(() => {
-    handleChange({ colorName, isEnabled });
+    handleChange({ colorName, hexCode, isEnabled });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEnabled]);
 

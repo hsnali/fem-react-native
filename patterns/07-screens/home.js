@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+
 import { View } from 'react-native';
 import { FlatList } from 'react-native';
 import shuffle from 'lodash-es/shuffle';
@@ -12,36 +13,30 @@ import { Preview } from '@molecules/preview';
 
 export const Home = ({ navigation, route: { params = {} } }) => {
   const [canvas, setCanvas] = useState({ palettes: [], isLoading: true });
-  const [palettes, setPalettes] = useState([]);
-  const customPalette = params.palette;
+  const [userPalettes, setUserPalettes] = useState([]);
 
   const getPalettes = useCallback(async () => {
     const response = await fetch(PALETTE_URL);
     setCanvas((state) => ({ ...state, isLoading: true }));
     if (response.ok) {
-      const palettes = shuffle(await response.json());
-      setCanvas({ palettes, isLoading: false });
+      setCanvas({ palettes: shuffle(await response.json()), isLoading: false });
     }
   }, []);
-
-  console.log('*** param colors', customPalette);
-
-  useEffect(() => {
-    const combinedPalettes = [...canvas.palettes];
-    if (customPalette) combinedPalettes.unshift(customPalette);
-    setPalettes(combinedPalettes);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [canvas]);
 
   useEffect(() => {
     getPalettes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (params.palette) setUserPalettes((state) => [...state, params.palette]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.palette]);
+
   return (
     <View style={utilStyles.container}>
       <FlatList
-        data={palettes}
+        data={[...userPalettes, ...canvas.palettes]}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Preview

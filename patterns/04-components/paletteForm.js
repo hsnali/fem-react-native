@@ -6,7 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import uniqueId from 'lodash-es/uniqueId';
+import random from 'lodash-es/random';
 
 // Local
 import { utilStyles } from '@base/styles/utils';
@@ -16,7 +16,7 @@ import { ColorToggle } from '@molecules/colorToggle';
 
 export const PaletteForm = ({ handleSave }) => {
   const [form, setForm] = useState({
-    id: uniqueId(),
+    id: random(10000),
     paletteName: '',
     colors: [],
   });
@@ -30,10 +30,6 @@ export const PaletteForm = ({ handleSave }) => {
   const saveForm = () => {
     handleSave(form);
   };
-
-  useEffect(() => {
-    console.log('Form Data', form);
-  }, [form]);
 
   return (
     <View style={utilStyles.flexOne}>
