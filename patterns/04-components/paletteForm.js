@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
+  Alert,
   View,
   Text,
   TextInput,
@@ -19,6 +20,7 @@ export const PaletteForm = ({ handleSave }) => {
     id: random(10000),
     paletteName: '',
     colors: [],
+    isValid: false,
   });
 
   const handleToggleChange = ({ colorName, hexCode, isEnabled }) => {
@@ -28,7 +30,20 @@ export const PaletteForm = ({ handleSave }) => {
   };
 
   const saveForm = () => {
-    handleSave(form);
+    const { id, paletteName, colors } = form;
+    if (hasName() && hasColors()) handleSave({ id, paletteName, colors });
+  };
+
+  const hasColors = () => {
+    if (form.colors.length) return true;
+    Alert.alert('Colours', 'Please select at least one colour');
+    return false;
+  };
+
+  const hasName = () => {
+    if (form.paletteName) return true;
+    Alert.alert('Palette Name', 'Please enter a name for your palette');
+    return false;
   };
 
   return (
