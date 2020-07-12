@@ -6,9 +6,16 @@ export const utilStyles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#FFF',
   },
+  flexOne: {
+    flex: 1,
+  },
   flush: {
     margin: 0,
     padding: 0,
+  },
+  flushHorizontal: {
+    marginHorizontal: 0,
+    paddingHorizontal: 0,
   },
   bold: {
     fontWeight: '700',
@@ -34,14 +41,54 @@ export const utilStyles = StyleSheet.create({
   },
   thumbnail: {
     flexBasis: '20%',
-    flexShrink: 0,
-    flexGrow: 1,
     height: 80,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
   },
+  thumbnailSmall: {
+    flexBasis: 'auto',
+    width: 30,
+    height: 30,
+    marginRight: 10,
+    shadowOpacity: 0,
+  },
   invisible: {
     opacity: 0,
+  },
+  buttonPrimary: {
+    fontSize: 18,
+    fontWeight: '600',
+    padding: 10,
+    marginVertical: 15,
+    backgroundColor: '#022a4b',
+    borderRadius: 3,
+    overflow: 'hidden',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  textField: {
+    borderWidth: 1,
+    borderRadius: 3,
+    borderColor: '#555',
+    padding: 11,
+    marginBottom: 10,
+  },
+  switchFields: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  rowFieldMinimal: {
+    flexDirection: 'row',
+    flexGrow: 0,
+    flexShrink: 1,
+    alignItems: 'center',
+  },
+  separator: {
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 1,
+    marginVertical: 5,
   },
 });

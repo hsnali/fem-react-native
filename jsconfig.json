@@ -6,7 +6,8 @@
       "@base/*": ["patterns/01-base/*"],
       "@atoms/*": ["patterns/02-atoms/*"],
       "@molecules/*": ["patterns/03-molecules/*"],
-      "@screens/*": ["patterns/04-screens/*"]
+      "@components/*": ["patterns/04-components/*"],
+      "@screens/*": ["patterns/07-screens/*"]
     }
   },
   "typeAcquisition": {
